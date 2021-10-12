@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 18:06:35 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/11 19:11:39 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/12 14:05:53 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/12 15:35:57 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int	i;
+	int	x;
+	int	y;
+	int	z;
 
-	i = 0;
-	while ((s1[i] != '\0'|| s2[i] != '\0') && i < n)
+	x=0;
+	while (str[x] != 0)
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i ++;
+		if (str[x] == to_find[y])
+			z = x;
+			y = 0;
+			while ((str[x] == to_find[y]) && str[x] != 0 )
+			{
+				x++;
+				y++;;
+				if (to_find[y] == 0)
+					return (str[z]);
+			}
+		x++;
 	}
-	return (0);
+	return (str[x]);
 }

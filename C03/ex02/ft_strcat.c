@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 18:06:35 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/11 19:11:39 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/12 10:58:12 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/12 11:03:32 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strcat(char *dest. char *src)
 {
-	unsigned int	i;
+	unsigned int x:
+	unsigned int y;
+	unsigned int z;
 
-	i = 0;
-	while ((s1[i] != '\0'|| s2[i] != '\0') && i < n)
+	x = 0;
+	while (src[x] != 0)
+		x++;
+	y = 0;
+	while (dest[y] != 0)
+		y++;
+	x = x + y;
+	z = 0;
+	while (y <= x)
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i ++;
+		dest[y] = src[z];
+		y++;
+		z++;
 	}
-	return (0);
+	dest[x] = 0;
 }
