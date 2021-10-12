@@ -6,7 +6,7 @@
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:05:53 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/12 15:35:57 by lbonucci         ###   ########.fr       */
+/*   Updated: 2021/10/12 18:37:31 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,24 @@ char	*ft_strstr(char *str, char *to_find)
 	int	y;
 	int	z;
 
-	x=0;
+	x = 0;
+	if (to_find[x] == 0)
+		return (str);
 	while (str[x] != 0)
 	{
 		if (str[x] == to_find[y])
+		{
 			z = x;
 			y = 0;
 			while ((str[x] == to_find[y]) && str[x] != 0 )
 			{
 				x++;
-				y++;;
+				y++;
 				if (to_find[y] == 0)
-					return (str[z]);
+					return (&str[z]);
 			}
+		}
 		x++;
 	}
-	return (str[x]);
+	return (0);
 }

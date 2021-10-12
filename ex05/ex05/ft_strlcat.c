@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:59:26 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/06 17:17:56 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/12 19:23:35 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *********nbr)
+unsigned int	*ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	*********nbr = 42;
+	unsigned int	x;
+	unsigned int	y;
+
+	x = 0;
+	y = 0;
+	while (dest[x])
+		x++;
+	while (y < size && src[y])
+	{
+		dest[x + y] = src[y];
+		y++;
+	}
+	dest [x + y] = 0;
+	size = x + y ;
+	return (size + 1);
 }
