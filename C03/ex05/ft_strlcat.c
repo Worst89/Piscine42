@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:05:53 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 11:08:54 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/13 12:26:30 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	x;
-	int	y;
+	unsigned int	x;
+	unsigned int	y;
 
 	x = 0;
-	if (to_find[0] == 0)
-		return (str);
-	while (str[x] != 0)
-	{
-		y = 0;
-		while (str[x + y] == to_find[y] && str[x + y] != 0)
-		{
-			if (to_find[y + 1] == 0 )
-				return (&str[x]);
-			y++;
-		}
+	y = 0;
+	while (dest[x])
 		x++;
+	while (y < size && src[y])
+	{
+		dest[x + y] = src[y];
+		y++;
 	}
-	return (0);
+	dest [x + y] = 0;
+	size = x + y ;
+	return (size + 1);
 }
