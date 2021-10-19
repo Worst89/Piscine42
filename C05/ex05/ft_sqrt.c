@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 14:55:10 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/19 13:54:29 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/19 13:54:39 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_sqrt(int nb)
 {
-	unsigned int	x;
-	unsigned int	y;
+	int	i;
+	int	pow;
 
-	x = 0;
-	y = 0;
-	while (dest[x])
-		x++;
-	while (y < size && src[y])
+	if (nb < 1)
+		return (0);
+	else if (nb == 1)
+		return (1);
+	i = 2;
+	pow = 0;
+	while (i < nb && i < 46341)
 	{
-		dest[x + y] = src[y];
-		y++;
+		pow = i * i;
+		if (pow == nb)
+			return (i);
+		i++;
 	}
-	dest [x + y] = 0;
-	size = x + y ;
-	return (size);
+	return (0);
 }

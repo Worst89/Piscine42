@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 14:55:10 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/19 13:55:49 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/19 13:57:36 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_ten_queens_puzzle(void)
 {
-	unsigned int	x;
-	unsigned int	y;
-
-	x = 0;
-	y = 0;
-	while (dest[x])
-		x++;
-	while (y < size && src[y])
-	{
-		dest[x + y] = src[y];
-		y++;
-	}
-	dest [x + y] = 0;
-	size = x + y ;
-	return (size);
+	return (42);
 }

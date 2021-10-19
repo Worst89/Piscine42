@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 14:55:10 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/19 13:42:16 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/19 13:42:24 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_recursive_power(int nb, int power)
 {
-	unsigned int	x;
-	unsigned int	y;
-
-	x = 0;
-	y = 0;
-	while (dest[x])
-		x++;
-	while (y < size && src[y])
-	{
-		dest[x + y] = src[y];
-		y++;
-	}
-	dest [x + y] = 0;
-	size = x + y ;
-	return (size);
+	if (power < 0)
+		return (0);
+	else if (!power)
+		return (1);
+	return (nb * ft_recursive_power(nb, power - 1));
 }

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 14:55:10 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/19 13:41:00 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/19 13:56:42 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_iterative_factorial(int nb)
 {
-	unsigned int	x;
-	unsigned int	y;
+	int	i;
+	int	num;
 
-	x = 0;
-	y = 0;
-	while (dest[x])
-		x++;
-	while (y < size && src[y])
+	if (nb < 0)
+		return (0);
+	else if (!nb)
+		return (1);
+	i = 1;
+	num = 1;
+	while (i <= nb)
 	{
-		dest[x + y] = src[y];
-		y++;
+		num *= i;
+		i++;
 	}
-	dest [x + y] = 0;
-	size = x + y ;
-	return (size);
+	return (num);
 }

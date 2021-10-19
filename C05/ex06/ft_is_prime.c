@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 14:55:10 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/19 13:54:53 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/19 13:55:02 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_is_prime(int nb)
 {
-	unsigned int	x;
-	unsigned int	y;
+	int		i;
 
-	x = 0;
-	y = 0;
-	while (dest[x])
-		x++;
-	while (y < size && src[y])
+	if (nb == 2)
+		return (1);
+	if (nb <= 1 || !(nb % 2))
+		return (0);
+	i = 2;
+	while (i <= nb / 2)
 	{
-		dest[x + y] = src[y];
-		y++;
+		if (!(nb % i))
+			return (0);
+		i += 1;
 	}
-	dest [x + y] = 0;
-	size = x + y ;
-	return (size);
+	return (1);
 }

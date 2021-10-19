@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 14:55:10 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/19 13:55:27 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/19 13:55:32 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_is_prime(int nb)
 {
-	unsigned int	x;
-	unsigned int	y;
+	int		i;
 
-	x = 0;
-	y = 0;
-	while (dest[x])
-		x++;
-	while (y < size && src[y])
+	if (nb == 2)
+		return (1);
+	if (nb <= 1 || !(nb % 2))
+		return (0);
+	i = 2;
+	while (i <= nb / i)
 	{
-		dest[x + y] = src[y];
-		y++;
+		if (!(nb % i))
+			return (0);
+		i += 1;
 	}
-	dest [x + y] = 0;
-	size = x + y ;
-	return (size);
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (nb <= 1)
+		return (2);
+	while (nb)
+	{
+		if (ft_is_prime(nb))
+			return (nb);
+		else
+			nb += 1;
+	}
+	return (0);
 }

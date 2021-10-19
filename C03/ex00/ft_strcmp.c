@@ -6,7 +6,7 @@
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:20:23 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/12 18:57:21 by lbonucci         ###   ########.fr       */
+/*   Updated: 2021/10/14 15:48:56 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,11 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (s1[x] - s2[x]);
 }
+
+#include <stdio.h>
+
+int main()
+{
+	printf("%d", ft_strcmp("ciao","ciiiiiii"));
+			return (0);
+			}

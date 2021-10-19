@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   aff_last_param.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbonucci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:50:19 by lbonucci          #+#    #+#             */
-/*   Updated: 2021/10/13 14:55:10 by lbonucci         ###   ########.fr       */
+/*   Created: 2021/10/19 10:08:16 by lbonucci          #+#    #+#             */
+/*   Updated: 2021/10/19 10:41:17 by lbonucci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include <unistd.h>
+
+int main(int argc, char **argv)
 {
-	unsigned int	x;
-	unsigned int	y;
+	int i;
+	int x;
 
 	x = 0;
-	y = 0;
-	while (dest[x])
-		x++;
-	while (y < size && src[y])
+	i = argc - 1;
+	if( argc <= 1)
+		write(1, "\n", 1);
+	while(argv[i][x] != 0)
 	{
-		dest[x + y] = src[y];
-		y++;
+		write(1, &argv[i][x], 1);
+		x++;
 	}
-	dest [x + y] = 0;
-	size = x + y ;
-	return (size);
+return (0);
 }
